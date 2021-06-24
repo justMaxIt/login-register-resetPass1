@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ValueComponent } from './value/value.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ValueComponent } from './value/value.component';
     AppRoutingModule,
     HttpClientModule,
     SharedModule,
-    AuthModule
+    AuthModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
