@@ -7,8 +7,8 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./value.component.scss']
 })
 export class ValueComponent implements OnInit {
-  configUrl = 'http://swapi.dev/api/planets/1/'
-  values: any
+  configUrl = 'http://swapi.dev/api/planets/'
+  planets: any
 
   constructor(private http: HttpClient) { }
 
@@ -18,8 +18,8 @@ export class ValueComponent implements OnInit {
 
   getValue() {
     return this.http.get<any>(this.configUrl).subscribe(response => {
-      console.log(response);
-      this.values = response
+      // console.log(response.results);
+      this.planets = response.results
     }, error => {
       console.log(error);
     })
