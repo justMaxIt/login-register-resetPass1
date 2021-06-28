@@ -12,15 +12,24 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   login(model: any) {
-    return this.http.post(this.authUrl + 'login', model).pipe(
+    // return this.http.post(this.authUrl + '', model).pipe(
+    //   map((response: any) => {
+    //     const user = response;
+    //     console.log(user);
+
+    //     if (user.result.succeeded) {
+    //       localStorage.setItem('token', user.token)
+    //     }}))
+
+    return this.http.get(this.authUrl + '', model).pipe(
       map((response: any) => {
         const user = response;
         console.log(user);
 
-        if (user.result.succeeded) {
-          localStorage.setItem('token', user.token)
-        }
-      })
-    )
+        // if (user.result.succeeded) {
+        //   localStorage.setItem('token', user.token)
+        // }
+      }))
+
   }
 }
